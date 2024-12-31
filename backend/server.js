@@ -4,7 +4,8 @@ const { v4 : uuidv4} = require('uuid');
 const express = require('express');
 const { generateURL } = require('./shortid.js');
 const app = express();
-
+const cors = require('cors');
+app.use(cors());
 app.use(express.json());
 app.post('/upload' , async (req , res)=>{
     const originalUrl = req.body.url; // Corrected variable name
